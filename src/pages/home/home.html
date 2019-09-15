@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row justify-content-center align-items-center>
+      <ion-col col-2>
+        <img [src]="me?.avatar" class="avatar" />
+      </ion-col>
+      <ion-col col-10>
+        <ion-title>
+          {{ me?.username }}
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item no-lines
+              *ngFor="let user of users"
+              [hidden]="user.id === me.id"
+              (click)="openChat(user)">
+      <ion-avatar item-start>
+        <img [src]="user.avatar">
+      </ion-avatar>
+      <h2>{{ user.username }}</h2>
+      <p>{{ user.id }}</p>
+      <ion-note item-end>
+        {{ user.joined | date:'h:mm a'}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "IonChat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

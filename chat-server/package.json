@@ -1,0 +1,29 @@
+{
+  "name": "chat-server",
+  "version": "1.0.0",
+  "description": "This is the realtime socket.io chat server",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahadur Rahman <get.rahadur@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahadur/ionchat.git"
+  },
+  "keywords": [
+    "nodejs",
+    "socket.io"
+  ],
+  "bugs": {
+    "url": "https://github.com/rahadur/ionchat/issues"
+  },
+  "homepage": "https://github.com/rahadur/ionchat#readme"
+}

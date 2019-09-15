@@ -1,0 +1,43 @@
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-center  style="margin: 30px 0;">
+      <ion-col col-8>
+        <img [src]="'/assets/svg/chasing_love.svg'" alt="">
+        <h3 text-center>Login</h3>
+      </ion-col>
+    </ion-row>
+
+    <!-- Avatar -->
+    <ion-row justify-content-center>
+      <ion-col col-4>
+        <img [src]="'/assets/svg/avatar/' + avatar" (click)="selectAvatar()"
+             class="avatar">
+      </ion-col>
+    </ion-row>
+    <!-- Avatar -->
+
+    <!-- Here we can use NgForm for validation -->
+    <ion-row justify-content-center>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" name="username" [(ngModel)]="username"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center style="margin-top: 20px;">
+      <ion-col col-10>
+        <button ion-button outline block
+                [disabled]="username === ''"
+                (click)="login()">
+          Login Now
+        </button>
+      </ion-col>
+    </ion-row>
+    <!-- Here we can use NgForm for validation -->
+
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-row justify-content-center align-items-center>
+      <ion-col col-3>
+        <img [src]="user.avatar" class="avatar" />
+      </ion-col>
+      <ion-col col-9>
+        <ion-title>
+          {{ user.username }}
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+
+      <ion-col col-9 *ngIf="message.from.username !== me.username">
+       <div class="message other-message">
+         <b>{{ message.from.username }}</b><br>
+         <span *ngIf="!message.isFile">{{ message.message }}</span>
+         <span *ngIf="message.isFile">
+           <a [href]="message.fileUrl">{{ message.message.name }}</a>
+         </span>
+         <!--<div class="time" text-right><br>{{ message.createdAt | date:'short' }}</div>-->
+       </div>
+
+      </ion-col>
+
+      <ion-col *ngIf="message.from.username === me.username"
+               col-9 offset-3>
+
+        <div class="message my-message">
+          <b>{{ message.from.username }}</b><br>
+          <span *ngIf="!message.isFile">{{ message.message }}</span>
+          <span *ngIf="message.isFile">
+           <a [href]="message.fileUrl">{{ message.message.name }}</a>
+         </span>
+          <!--<div class="time" text-right><br>{{ message.createdAt | date:'short' }}</div>-->
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngFor="let message of messages">
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row padding-right>
+      <ion-col col-1>
+        <button ion-button clear icon-only
+                (click)="sendAttachment()"
+                [disabled]="sendingAttachment">
+          <ion-icon name="attach"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-10>
+        <ion-input placeholder="Write message.." [(ngModel)]="message"></ion-input>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear icon-only [disabled]="message === ''" (click)="sendMessage()">
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

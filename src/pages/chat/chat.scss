@@ -1,0 +1,61 @@
+page-chat {
+  .header-md:after {
+    background-image: none !important;
+  }
+
+  .footer.footer-md {
+    background-image: none !important;
+    .toolbar-background.toolbar-background-md {
+      background: none !important;
+      border: none !important;
+    }
+  }
+
+  .footer-md::before {
+    background-image: none !important;
+  }
+
+  img.avatar {
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .message {
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 4px;
+  }
+
+  .my-message {
+    background: #07A0C3;;
+    color: #fff;
+  }
+
+  .other-message {
+    background: skyblue;
+    color: #fff;
+  }
+
+  .time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+  }
+
+  .message-input {
+    margin-top: 0px;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .msg-btn {
+    --padding-start: 0.5em;
+    --padding-end: 0.5em;
+  }
+}

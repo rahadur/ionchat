@@ -1,0 +1,8 @@
+<ion-content padding>
+  <ion-row>
+    <ion-col col-4 *ngFor="let avatar of avatars" (click)="selectAvatar(avatar)">
+      <img [src]="'/assets/svg/avatar/' + avatar" width="80" height="80"
+           style="padding: 5px; border: 3px solid lightgray; border-radius: 50%;" />
+    </ion-col>
+  </ion-row>
+</ion-content>
